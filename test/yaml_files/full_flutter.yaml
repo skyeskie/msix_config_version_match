@@ -1,0 +1,25 @@
+name: test_full_flutter
+description: Some description
+version: 0.8.2-alpha.2
+
+publish_to: none
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  msix: ^2.1.3
+
+flutter:
+  uses-material-design: true
+
+msix:
+  display_name: Test More Complicated File
+  identity_name: Test.No.Real.Program
+  msix_version: 0.8.2.19 # Should keep the comment
+  languages: en-us
+  architecture: x64
+  store: false
+

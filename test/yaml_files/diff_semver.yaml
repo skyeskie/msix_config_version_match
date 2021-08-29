@@ -1,0 +1,3 @@
+name: test_different_semver
+version: 0.1.2
+msix_version: 1.2.3.4

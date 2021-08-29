@@ -11,16 +11,15 @@ The `msix_version` is 4 digits, whereas normal semver is 3 with optional miscell
 the following rules:
 
 - The number should increase*
-- x.y.z maps directly to x.y.z.0
-- The fourth number will take a build number if available
-- Otherwise, it will increase the existing 4th number
+- x.y.z maps directly to x.y.z.0 if the first 3 numbers are different
+- If the first 3 numbers match, the existing fourth number is incremented
 
 Examples:
 
 | Pubspec Version | Existing msix_version | New msix_version |
 | --------------- | --------------------- | ---------------- |
 | 0.1.2           | 0.1.1.23              | 0.1.2.0          |
-| 1.2.3-alpha+43  | 1.2.2.42              | 1.2.3.43         |
+| 1.2.3-alpha+43  | 1.2.3.42              | 1.2.3.43         |
 | 1.2.3-alpha+10  | 1.2.3.42              | 1.2.3.43         |
 | 1.2.3-alpha.12  | 1.2.3.0               | 1.2.3.1          |
 | 1.2.3           | 1.2.3.12              | 1.2.3.13         |
@@ -34,10 +33,13 @@ Add to dev-dependencies
 
 ## Usage
 
-`dart pub run msix_config_version_match`
+`dart pub run msix_config_version_match [pubspec.yaml]`
 
 or
 
-`flutter pub run msix_config_version_match`
+`flutter pub run msix_config_version_match [pubspec.yaml]`
+
+You can optionally specify a single argument - the path to the `pubspec.yaml`
+file. It defaults to `pubspec.yaml` file in the current working directory.
 
 [semver](https://semver.org)
