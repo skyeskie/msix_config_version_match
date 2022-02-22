@@ -1,3 +1,11 @@
+# Deprecated
+
+The basic functionality has been merged into the [msix](https://pub.dev/packages/msix) package directly as of version 3.2.0.
+
+Simply remove the `msix_version` field (and/or command line options) and it'll default to `x.y.z.0` where `x.y.z` is the semver of the version in `pubspec.yaml`.
+
+
+
 # msix_config_version_parse
 
 ## Description
